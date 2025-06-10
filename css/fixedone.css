@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* Simple fluid media
+   Note: Fluid media requires that you remove the media's height and width attributes from the HTML
+   http://www.alistapart.com/articles/fluid-images/ 
+*/
+
+
+.call-courier-alert
+{ 
+	color:  #FB2A03;
+	font-size: 18px;
+	font-weight: 200;
+	visibility:  hidden;
+}
+
+

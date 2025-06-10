@@ -1,0 +1,95 @@
+<?php 
+require('includes/settings.php'); 
+
+
+$q="select * from _document6205 WHERE _fld6217='$page_marker'";
+$r = pg_query($connection, $q) or die("Error in query: $q." . pg_last_error($connection));
+$f=pg_fetch_array($r); 
+
+
+?>
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+<head>
+<?php require('includes/head.php'); ?>
+</head>
+<body>
+
+<?php require('includes/callback_mod.php'); ?>
+
+<?php require('includes/top.php'); ?>
+
+
+
+
+<div class="main-div">
+   <div class="main-int">
+      <h1>
+      <?php 
+      
+       $h1=$f['_fld6216'];
+       echo  $h1;
+      ?>
+       
+        </h1>
+      <div class='h1_border'></div>
+      <div class='right-main-column'>
+      
+      <?php
+      
+
+     	$q33="select * from _reference6203 
+     	                           INNER JOIN _reference6203_vt6207 ON _reference6203._idrref=_reference6203_vt6207._reference6203_idrref  
+     	                           INNER JOIN _document6205 ON  _reference6203._idrref = _document6205._fld6219rref  
+     	                           WHERE _document6205._fld6217='$page_marker'
+     	                           ORDER BY _fld6240";
+     	 
+   
+      	 
+		 $r33 = pg_query($connection, $q33) or die("Error in query: $q33." . pg_last_error($connection)); 
+         $rows33= pg_num_rows($r33);
+         
+  
+         
+		 if ($rows33>0)
+         {     
+      
+      ?>
+      
+      <div class='left-main-column'>
+      <?php 
+         require('includes/left-menu.php');
+      ?>
+   
+      
+      </div>
+      
+     <?php 
+     
+        }  
+     ?>
+      
+      
+         <div class="inner-text-block">
+        <?php 
+        require('includes/main-part.php'); 
+        ?>
+         </div>
+      </div>
+   
+
+
+</div>
+</div>
+
+<?php require('includes/footer.php'); ?>
+
+
+</body>
+</html>

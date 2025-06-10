@@ -1,0 +1,464 @@
+<?php require('includes/settings.php'); ?>
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html>
+<!--<![endif]--><head>
+<title>Услуги курьерской доставки UniExpress</title>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="yandex-verification" content="4cb7d50a248fa6f0" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0;">
+<meta name="description" content="Услуги курьерской доставки на самых выгодных условиях по Москве и области.">
+<meta name="keywords" content="услуги курьерской доставки москва">
+<meta name="robots" content="noyaca"/>
+    
+
+
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+<link href="css/boilerplate.css" rel="stylesheet" type="text/css">
+<link href="css/fluid-mobile.css" rel="stylesheet" type="text/css" media="only screen and (min-width: 1px) and (max-width: 610px)">
+<link href="css/fluid-tablet.css" rel="stylesheet" type="text/css" media="only screen and (min-width: 610px) and (max-width: 1023px)">
+<link href="css/fluid-desktop.css" rel="stylesheet" type="text/css" media="only screen and (min-width: 1024px)">
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700italic,700,900,900italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<!-- 
+<link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.css" />
+<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+-->
+
+
+<!-- jQuery -->
+
+<script defer src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script defer src="js/scripts.js"></script>
+<script defer src="js/call-courier.js"></script>
+
+<script async src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script async src="js/respond.min.js"></script>
+
+
+<script async src="js/jquery.maskedinput.js" type="text/javascript"></script> 
+<script src="https://www.google.com/recaptcha/api.js"></script>
+
+     
+     </head>
+<body>
+
+<!-- <?php include('includes/modales-back.html'); ?> -->
+
+<div id="call-back-window" class="modal-window">
+<div class='modal-window-close' onClick="callBackClose();"></div>
+<div class='modal-header'>Заказать звонок 3</div>
+<div class='modal-comment'>Наш сотрудник свяжется с Вами в ближайшее время</div>
+<form name='callback'>
+<div id='call-back-phone'>
+<input name='call_back_phone' id='call_back_phone_input' placeholder='Ваш номер телефона' class='sinput'></div>
+<div id='call-back-name'><input name='call_back_name' id='call_back_name_input' placeholder='Как к Вам обращаться?' class='sinput'></div>
+<div class='call-back-button'>
+ <button class="g-recaptcha button-but-small" id="call_back_button" onclick="callBackDo()">
+ЗАКАЗАТЬ ЗВОНОК 2
+</button>
+ </form>
+  <!-- <div class='button-small' id='call_back_button' title='Обратный звонок от службы курьерской доставки UniExpress' >ЗАКАЗАТЬ ЗВОНОК</div> -->
+  </div>
+
+
+<div id='priv_data'>Нажимая кнопку "Заказать звонок", я принимаю  <A HREF="https://uniexpress.ru/privatedata.html" TARGET="_blank">Правила обработки персональных данных</A>, и даю согласие на обработку моих персональных данных.</div> 
+
+</div>
+<div id='modales-back'></div>
+
+
+<div class='top-relative'></div>
+
+<div class='top-fixed'>
+   <div class='top-fixed-int'>
+      <div class='top-fixed-logo' title='UniExpress курьерская служба доставки для интернет-магазинов'></div>
+       <div class='top-fixed-location'>
+          <!-- <select id='location' class='location-select'>
+             <option value='mos' selected>г.Москва</option>
+             <option value='spb'>г.Санкт-Петербург</option>
+          </select>  -->
+      </div>
+     <div class='top-fixed-language'> <!-- <div id='language-changer'>En</div> --></div>
+      <div class='top-fixed-separator'></div>
+      <div class='top-fixed-services'><a href='services.html' rel='nofollow'><div id='services-tarif' title='Услуги курьерской доставки и тарифа на услуги курьерской доставки'>Услуги и тарифы</div></a></div>
+      <div class='top-fixed-services'><a href='http://partners.uniexpress.su' target="_blank" rel='nofollow'><div id='private-cabinet'  title='Вход для клиентов службы доставки UniExpress'>Личный кабинет</div></a></div>
+      <div class='top-fixed-callback'><div id='call-back-button' title='Обратный звонок от службы курьерской доставки UniExpress' onClick="callBackClick();">ЗАКАЗАТЬ ЗВОНОК</div></div>
+      
+      
+ 
+      <div class='top-fixed-menu-mobile' onClick='hMenuClickMobile();'></div>
+        <div class='top-fixed-menu-mobile-content' id='top_menu_mobile'>
+       <a href='services.html'><div id='services-tarif' class='point-ham-menu' title='Услуги курьерской доставки и тарифа на услуги курьерской доставки'>Услуги и тарифы</div></a>
+       <a href='about.html'><div id='about-point' class='point-ham-menu' title='Услуги курьерской доставки и тарифа на услуги курьерской доставки'>О компании</div></a>
+       <a href='documents.html'><div id='docs-point' class='point-ham-menu' title='Услуги курьерской доставки и тарифа на услуги курьерской доставки'>Документы</div></a>
+       <a href='partners.html'><div id='partners-point' class='point-ham-menu' title='Услуги курьерской доставки и тарифа на услуги курьерской доставки'>Партнеры</div></a>
+       <a href='contacts.html'><div id='loc-point' class='point-ham-menu' title='Услуги курьерской доставки и тарифа на услуги курьерской доставки'>Контакты</div></a>
+       </div>
+      <a href='http://partners.uniexpress.su' target="_blank" rel='nofollow' title="Вход в личный кабинет UniExpress"><div class='top-fixed-pcicon-mobile'></div></a>      
+       
+      
+      <div class='top-fixed-phones-tablet'>
+        <div class='top-fixed-menu-phone2'><div class='top-fixed-menu-phone1-comment'>Для жителей Москвы</div><div class='top-fixed-menu-phone1-phone'>8 (495) 258-62-01</div></div>
+        <a href='http://partners.uniexpress.su' target="_blank" rel='nofollow'><div class='top-fixed-pcicon-tablet'></div></a>
+        <div class='top-fixed-menu-tablet' onClick='hMenuClickTablet();'></div>
+        <div class='top-fixed-menu-tablet-content' id="top_menu_tablet">
+        <a href='services.html'><div id='services-tarif' class='point-ham-menu' title='Услуги курьерской доставки и тарифа на услуги курьерской доставки'>Услуги и тарифы</div></a>
+       <a href='about.html'><div id='about-point' class='point-ham-menu' title='Услуги курьерской доставки и тарифа на услуги курьерской доставки'>О компании</div></a>
+       <a href='documents.html'><div id='docs-point' class='point-ham-menu' title='Услуги курьерской доставки и тарифа на услуги курьерской доставки'>Документы</div></a>
+       <a href='partners.html'><div id='partners-point' class='point-ham-menu' title='Услуги курьерской доставки и тарифа на услуги курьерской доставки'>Партнеры</div></a>
+       <a href='contacts.html'><div id='loc-point' class='point-ham-menu' title='Услуги курьерской доставки и тарифа на услуги курьерской доставки'>Контакты</div></a>
+       </div>
+        
+      </div>
+   </div>
+
+	
+
+</div>
+
+<?php include('includes/call_courier.html'); ?>
+
+
+<div class='top-menu-stripe'>
+   <div class='top-menu-int'>
+          <div class='top-menu'><a href='about.html'>О компании</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href='documents.html'>Документы</a> 
+          &nbsp;&nbsp;&nbsp;&nbsp; <a href='partners.html'>Партнеры</a> &nbsp;&nbsp;&nbsp;&nbsp; 
+          <a href='contacts.html'>Контакты</a></div>
+          <div class='top-phone1-label'>Для жителей<br>Москвы</div>
+          <div class='top-phone1'>8 (495) 258-62-01</div>
+     </div>
+ 
+        <div class='top-menu-int-tablet'>
+                <div class='top-fixed-location-tablet'>
+                <!-- <select id='location' class='location-select'>
+             <option value='mos' selected>Москва</option>
+             <option value='spb'>C.Петербург</option>
+         	 </select>  -->
+          </div>
+          <div class='top-fixed-language-tablet'><!-- <div id='language-changer'>En</div> --></div>
+          <div class='top-fixed-callback-tablet'><div id='call-back-button' onClick="callBackClick();">ЗАКАЗАТЬ ЗВОНОК TT</div></div>
+          <div class='top-fixed-phone-mobile phone1'>8 (495) 258-62-01</div>
+      </div>
+</div>
+
+
+
+
+<noindex>
+<div class='top-slider'>
+<input type='hidden' id='sliderPos' value='1'>
+    <div class='block-int'>
+        <div id='top-slider-header1' class='top-slider-header'><h1>Курьерская служба доставки UniExpress</h1></div>
+        
+     
+
+        
+        <div id='top-slider-text1' class='top-slider-text'>Полный цикл оказания <strong>курьерских услуг для интернет-магазинов</strong>, малого и среднего бизнеса от получения товара у поставщика и размещения его на нашем складе – до <strong>курьерской доставки</strong> конечному пользователю в Москве или в любом городе России.</div>
+        
+        <div id='top-slider-header2' class='top-slider-header2'><h2>Фулфилмент</h2></div>
+        
+        <div id='top-slider-text2' class='top-slider-text'>Оказываем услуги ответственного хранения для вашего интернет-магазина. Комплектуем и упаковываем заказы. При необходимости оказываем услуги по проверке работоспобоности товара.<br>С нашего склада осуществляется <strong>экспресс-доставка день в день</strong></div>
+        
+        <div id='top-slider-header3' class='top-slider-header'><h2>Доставка заказов по всей России</h2></div>
+        
+        <div id='top-slider-text3' class='top-slider-text'>В рамках одного договора с нашей компанией вы можете пользоваться услугами и <strong>отправлять заказы по всей России</strong> через такие компании как Почта России, DPD, СДЭК, СПСР, через постаматы PickPoint и QiwiPost. При этом мы сами упакуем и доставим заказ в <strong>курьерскую службу</strong>, и отправим по месту назначения.</div>
+        
+        <div id='top-slider-header4' class='top-slider-header'><h2>Кассовое обслуживание</h2></div>
+        
+        <div id='top-slider-text4' class='top-slider-text'>Услуги финансового сопровождения интернет-магазина включают в себя пробитие <strong>кассового чека</strong> и <strong>прием наличных</strong> при продаже товара. Мы также принимаем <strong>оплату банковскими картами</strong> при курьерской доставке и самовывозе.</div>
+        
+            <div id='top-slider-header5' class='top-slider-header'><h2>Получение заказов интернет-магазина</h2></div>
+        
+        <div id='top-slider-text5' class='top-slider-text'>Наш водитель прибудет к Вам в офис для <strong>получения заказов</strong> и бережно перевезет их в наш офис для последующей доставки. Мы сделаем услугу получения заказов бесплатной при наличии у вас 10-ти и более заказов. </div>
+
+        
+        
+        <a href='services.html'><div id='top-slider-button' class='slider-button' title='О курьерских услугах и услугах ответственного хранения подробнее'>УЗНАТЬ БОЛЬШЕ</div></a>
+        <div class='slider-switch'>
+           <div id='slider_switch_1' class='slider-switch-item ssi-full' onClick='ChangeSlider(1);'></div>
+           <div id='slider_switch_2' class='slider-switch-item ssi-empty' onClick='ChangeSlider(2);'></div>
+           <div id='slider_switch_3' class='slider-switch-item ssi-empty' onClick='ChangeSlider(3);'></div>
+           <div id='slider_switch_4' class='slider-switch-item ssi-empty' onClick='ChangeSlider(4);'></div>
+           <div id='slider_switch_5' class='slider-switch-item ssi-empty'onClick='ChangeSlider(5);'></div>
+        </div>
+       
+    </div>
+</div>
+</noindex>
+
+
+<div class='first-blue-block'>
+   <div class='block-int'>
+      <div class='first-blue-header'>Берем на себя все заботы о доставке</div>
+      <div class='first-blue-orange'></div>
+      <div class='first-blue-portal'>
+         <div class='first-blue-text1'>Вам больше не придется решать где найти курьера, как отправить заказ в другой город России, где хранить товары и кто будет комплектовать заказы</div>
+         <div class='first-blue-text2'>Вы занимаетесь развитием и продажами, а остальное мы возьмем на себя.</div>
+      </div>
+      <div class='first-blue-buttons'>
+         <a href='contract.html' class='mainlink'><div class='usual-button button1' title='Заключить договор с курьерской службой доставки UniExpress'>ЗАКЛЮЧИТЬ ДОГОВОР</div></a>
+         <div class='usual-button button2' title='Рассчитать тариф на курьерскую доставку и отправки в регионы РФ' onClick="javascript:document.location='calc.html';"><a href='calc.html' class='mainlink'>ТАРИФНЫЙ КАЛЬКУЛЯТОР</a></div>
+      
+      </div>
+      
+  
+   </div>
+</div>
+
+    <div class='services-block'>
+       <div class='block-int'>
+          <div class='services-block-header'>НАШИ УСЛУГИ</div>
+          <div class='services-block-orange'></div>
+          <div class='services-block-line'>
+            <div id='services_01' class='services-block-service'>
+                <a href='services-delivery.html'><div class='service-icon' title='Полный спектр услуг для интeрнeт-мaгaзинoв'></div></a>
+                <div class='service-text'><a href='services-delivery.html' class='mainText'>Обеспечим <strong>курьерскую доставку заказов для любых мaгaзинoв</strong> по Москве и Московской области, или по Петербургу и Ленинградской области</a></div>
+            </div>
+            <div id='services_02' class='services-block-service'>
+                <div class='service-icon' title='Он-лайн система Личный кабинет для оформления заказов и отслеживания статусов'></div>  
+                <div class='service-text'>Предоставим возможность <strong>отслеживания статусов</strong> заказов через он-лайн систему «Личный кабинет». А также через интеграцию API.</div>   
+            </div>
+            <div id='services_03' class='services-block-service'>
+                 <a href='services-russia.html' class='mainText'><div class='service-icon' title='Доставка заказов по городам России'></div></a> 
+                <div class='service-text'><a href='services-russia.html' class='mainText'><strong>Отправим заказы по всей России</strong> через Почту, EMS, DPD, СДЭК и другие курьерские службы и транспортные компании. Заключать договора с другими компаниями не требуется.</a></div> 
+            </div>
+            <div id='services_04' class='services-block-service'>
+                <a href='services-fulfilment.html' class='mainText'><div class='service-icon' title='Склад ответственного хранения и комплектации. Fullfilment.'></div></a>
+                <div class='service-text'><a href='services-fulfilment.html' class='mainText'>Окажем <strong>услуги ответственного хранения</strong> и комплектации заказов от упаковки до проверки работоспособности.</a></div>
+            </div>
+          </div>
+          
+          
+          
+           <div class='services-block-line'>
+            <div id='services_05' class='services-block-service'>
+                <a href='services-kassa.html' class='mainText'><div class='service-icon' title='Кассовые чеки'></div></a>
+                <div class='service-text'><a href='services-kassa.html.html' class='mainText'>Обеспечим <strong>кассовое обслуживание</strong> согласно закона 54-ФЗ от 01.07.2017</a></div>
+            </div>
+            <div id='services_06' class='services-block-service'>
+                <a href='services-pickup.html' class='mainText'><div class='service-icon' title='Пункты самовывоза в Москве и Санкт-Петерубрге'></div> </a> 
+                <div class='service-text'><a href='services-pickup.html' class='mainText'>Самовывоз. Доступны несколько пунктов выдачи в Москве и Санкт-Петербурге</a></div>   
+            </div>
+            <div id='services_07' class='services-block-service'>
+                 <div class='service-icon' title='Получение заказов у поставщиков'></div>  
+                <div class='service-text'>Получим заказы на Вашем складе или примем заказы в нашем офисе.</div>
+            </div>
+            <div id='services_08' class='services-block-service'>
+                <a href='services-card.html' class='mainText'><div class='service-icon' title='Прием оплаты банковскими картами'></div></a>  
+                <div class='service-text'><a href='services-card.html' class='mainText'>Обеспечим <strong>прием оплаты банковскими картами</strong> при помощи терминала в момент доставки или он-лайн на вашем сайте (виджет)</a></div> 
+            </div>
+          </div>
+          <div class='services-block-calcicon'><div class='calcicon' title='Тарифы на услуги курьерской доставки' onClick="javascript:document.location='calc.html';"></div></div>
+          <div class='services-block-calctext'>Гибкая стоимость и удобный расчет</div>
+          <div class='services-block-button'>
+          <div class='usual-button-center' title='Расчет стоимости курьерской доставки' onClick="javascript:document.location='calc.html';"><a href='calc.html' class='mainlink'>РАССЧИТАТЬ СТОИМОСТЬ</a></div></div>
+          
+       </div>
+    </div>
+
+
+<div class='zone-block'>
+   <div class='block-int'>
+      <div class='zone-block-header'>ЗОНА ПОКРЫТИЯ</div>
+      <div class='services-block-orange'></div>
+      <div class='zone-block-line'>
+         <div id='zone_01' class='zone-block-block'>
+            <div class='zone-icon' title='Услуги курьерской доставки по Москве и области'></div>  
+            <div class='zone-text'><strong>Курьерская доставка по Москве и Московской области</strong>, а также по Санкт-Петербургу и Ленинградской области собственной курьерской службой.</div>     
+        </div>
+         <div id='zone_02' class='zone-block-block zone-block-center'>
+            <div class='zone-icon' title='Отправка заказов в любой город России'></div>  
+            <div class='zone-text'><strong>Доставка и пункты самовывоза во всех городах России</strong>. Отправка через Почту России, DPD, EMS, СДЭК, QiwiPost, PickPoint и другие службы доставки.</div>     
+        </div>
+         <div id='zone_03' class='zone-block-block'>
+            <div class='zone-icon' title='Отправка заказов в другие страны мира'></div>  
+            <div class='zone-text'><strong>Доставка по всему миру</strong> с помощью Почты России.</div>     
+        </div>
+      </div>
+   </div>
+</div>  
+
+<noindex>
+
+<?php
+  $q3="select * from _reference6242 WHERE _fld6248='t' ORDER BY _code";
+  $r3 = pg_query($connection, $q3) or die("Error in query: $q3." . pg_last_error($connection));
+  $rows3= pg_num_rows($r3);
+  
+  $thisRev= rand(1, $rows3);
+  
+  $q="select * from _reference6242 WHERE _code='$thisRev'";
+  $r = pg_query($connection, $q) or die("Error in query: $q." . pg_last_error($connection));
+  $f=pg_fetch_array($r); 
+  
+  
+
+  
+  echo "<div class='reviews-block' id='reviews_block' thisRev='$thisRev' allRevs='$rows3'>";
+  echo "<style> .reviews-block-slider-photo { background: url(../images/slider-customers/$f[_fld6249]) no-repeat center center scroll; } </style>";
+?>
+
+ 
+   <div class='block-int'>
+     <div class='reviews-block-comment'>Вы не обязаны доверять только нашим словам. Узнайте, что о нас</div>
+     <div class='reviews-block-header'>ГОВОРЯТ НАШИ КЛИЕНТЫ</div>
+     <div class='reviews-block-orange'></div>
+     
+     <div class='reviews-review' id='reviews_review'><?php echo "$f[_fld6246]"; ?></div>
+      <div class='reviews-block-slider'>
+        
+           <div class='reviews-block-slider-left' id='rewiew_slider_arrow_left'></div>  
+           <div class='reviews-block-slider-center'>
+               <div class='reviews-block-slider-photo' id='review_slider_photo'></div>
+               <div class='reviews-block-slider-name' id='review_slider_name'><?php echo $f['_fld6250']; ?></div>
+               <div class='reviews-block-slider-position' id='review_slider_position'><?php echo $f['_fld6251']; ?></div>
+               <div class='reviews-block-slider-company' id='review_slider_company'><a href='<?php echo $f['_fld6247']; ?>' target="_blank"><?php echo $f['_fld6252']; ?></a></div>
+           </div>
+           <div class='reviews-block-slider-right' id='rewiew_slider_arrow_right'></div>       
+      </div>
+   </div>
+</div>
+
+</noindex>
+
+<div class='customers-block'>
+   <div class='block-int'> 
+        <div class='customers-block-header'>НАМ ДОВЕРЯЮТ</div>
+        <div class='customers-block-comment'>уже более 300 организаций и интернет-магазинов</div>
+        <div class='services-block-orange2'></div>
+         <div class='customers-block-slider-left' id='customer_slider_left' onClick='custSliderLeft();'></div>
+        <div class='customers-block-slider'>
+            
+  
+
+           <div id='customer_slider_int'>
+			<input type='hidden' id='csposition' value='0'> 
+            <input type='hidden' id='csthislogo' value='1'> 
+            
+            <?php 
+             $q3="select * from _reference6241 WHERE _fld6245='t' ORDER BY _description";
+			 $r3 = pg_query($connection, $q3) or die("Error in query: $q3." . pg_last_error($connection));
+	         $rows3= pg_num_rows($r3);
+             echo "<input type='hidden' id='cscount' value='$rows3'>"; 
+			 for($i3=0; $i3<$rows3; $i3++)
+ 	    	 {
+               $f3=pg_fetch_array($r3); 
+               $pos = $i3*210;
+               echo "<style>#customer_logo0".($i3+1)." { background: url(../images/logos/$f3[_fld6243]) center center no-repeat; background-size: contain; left: ".$pos."px;  }</style>";
+               echo "<a href='$f3[_fld6244]' target='_blank'><div class='customers-block-slider-logo' id='customer_logo0".($i3+1)."' title='$f3[_description]'></div></a>";
+             }
+       
+             ?>   
+            
+            
+            
+			
+         
+         
+          </div>  
+            
+        </div> 
+        <div class='customers-block-slider-right' onClick='custSliderRight();'></div>   
+         <div class='customers-block-more'><a href='partners.html'>Перейти в раздел НАШИ ПАРТНЕРЫ</a></div>    
+       </div>
+        
+   </div>
+</div>
+
+
+<div class="homepage-hero-module">
+
+    <div class="video-container">
+        <div class="filter"></div>
+        <video autoplay loop class="fillWidth">
+            <source src='videos/Typer/MP4/Typer.mp4' type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            <source src='videos/Typer/WEBM/Typer.webm' type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+        </video>
+        <div class="poster hidden">
+            <img src='videos/Typer/Snapshots/Typer.jpg' alt="Связаться со службой курьерской доставки UniExpress">
+        </div>
+    </div>
+    
+    
+    
+</div>
+
+
+<div class='footer-block'>
+
+    <div class='callus-block'>
+  <div class='block-int'>
+      <div class='callus-block-header'>Остались вопросы?</div>
+      <div class='callus-block-comment'>С удовольствием на них ответим!</div>
+      <div id='callus_button' class='callus-button' title='Заказ обратного звонка от курьерской службы доставки UniExpress' onClick="callBackClick();">ЗАКАЗАТЬ ЗВОНОК</div>
+      <div class='footer-block-phone'></div>
+   </div>
+</div>
+
+
+   <div class='block-int'>
+       <div class='footer-block-header'>Готовы начать сотрудничество?</div>
+       <a href='contract.html' class='mainlink'>
+       <div class='footer-block-button'><div class='usual-button-center' title='Заключить договор на курьерскую доставку от UniExpress'>ЗАКЛЮЧИТЬ ДОГОВОР</div></div>
+       </a>
+   	    <div class='footer-block-car'></div>
+        <div class='footer-block-man'></div>
+   </div>
+</div>
+
+<div class='bottom-menu-block'> 
+   <div class='block-int'>
+       <div class='bottom-menu-logos'>
+           <div class='bottom-menu-logo' title='Служба курьерской доставки UniExpress'></div>F
+       </div>
+       <div class='bottom-menu-contacts'>г. Москва, <br> Автомобильный пр-д, д.10, стр.5 <br>+7 (495) 258-62-01<br>© UniExpress.ru 2004-<?php echo date("Y"); ?>
+       </div>
+
+       <div class='bottom-menu-col1'>
+       <a href='/' class='bottom-menu-link'>Главная</a><br>
+       <a href='about.html' class='bottom-menu-link'>О компании</a><br>       
+	   <a href='services.html' class='bottom-menu-link'>Услуги и тарифы</a><br>
+      <a href='yunexpress.html' class='bottom-menu-link'>YUN EXPRESS</a><br> 
+       </div>
+       <div class='bottom-menu-col2'>
+           <a href='documents.html' class='bottom-menu-link'>Документы</a><br>
+       	   <a href='partners.html' class='bottom-menu-link'>Наши партнеры </a><br>       
+	      <!-- <a href='api.html' class='bottom-menu-link'>API</a><br> -->
+	       <a href='contacts.html' class='bottom-menu-link'>Контакты</a>
+       </div>
+   
+   </div>
+</div>
+
+<!-- Yandex.Metrika counter -->
+<script async src="//mc.yandex.ru/metrika/watch.js" type="text/javascript"></script>
+<script type="text/javascript">
+try { var yaCounter443878 = new Ya.Metrika({id:443878,
+          webvisor:true,
+          clickmap:true,
+          trackLinks:true,
+          accurateTrackBounce:true});
+} catch(e) { }
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/443878" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+&nbsp;
+
+<script>
+window.replainSettings = { id: '1c0b73f3-51b2-4445-9e44-5aec7f52dd45' };
+(function(u){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src=u;
+var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
+})('https://widget.replain.cc/dist/client.js');
+</script>
+
+
+</body>
+</html>

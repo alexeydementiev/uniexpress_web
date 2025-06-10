@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /partners.
+Disallow: /contract.html
+Disallow: /documents.html
+Disallow: /calc.html
+Disallow: /?C=
+Disallow: /?chapter=
+
+Sitemap: https://uniexpress.ru/sitemap.xml
+Host: https://uniexpress.ru

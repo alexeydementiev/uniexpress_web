@@ -1,0 +1,159 @@
+<?php 
+    $q = "select * from _const5820";
+$r = pg_query($connection, $q) or die("Error in query: $q." . pg_last_error($connection));
+
+$f=pg_fetch_array($r);
+if($f['_fld5821']=='t') {
+   
+   ?>
+    
+
+    
+    <div id="call_courier" pos='min'>
+	    <div id="call_courier_tab" onClick="callCourierClick();"><div id='call_courier_text'></div></div>
+	    <div id='call_courier_window'>
+		 <h3>С помощью этой функции вы можете вызвать курьера для экспресс доставки прямо сейчас, даже если у вас не заключен с нами договор. Для вызова курьера заполните пожалуйста форму. <br>
+		 <b>Стоимость экспресс-доставки до 3 кг по Москве в предедах МКАД 499 руб.</b> </h3>
+		 
+		 <h3><strong>Заказчик</strong></h3><hr>
+		 		
+		 <div class='calc-form-td'>
+   		<div class='contract-form-label'><label for="call_courier_person" id='call_courier_label'>Как к Вам обращаться:</label></div>
+        <div class='contract-form-form' id='address_type_select'>
+        <input type="text" id='call_courier_person' class="calc-input-long" value='' placeholder='Введите Ваше имя' onchange="CheckNameCC();">
+
+        </div>
+		</div>   
+		   
+		<div class='calc-form-td'>
+   		<div class='contract-form-label'><label for="call_courier_phone" id='call_courier_label'>Ваш номер телефона:</label></div>
+        <div class='contract-form-form'>
+        <input type="text" id='call_courier_phone' class="calc-input-long" value='' placeholder='Введите Ваш телефонный номер' onchange="CheckPhoneCC();">
+        </div>
+		</div> 
+		
+		<div class='calc-form-td'>
+   		<div class='contract-form-label'><label for="call_courier_email" id='call_courier_email_label'>Ваш email:</label></div>
+        <div class='contract-form-form'>
+        <input type="text" id='call_courier_email' class="calc-input-long" value='' placeholder='Введите адрес электронной почты'>
+        </div>
+		</div>
+		
+		 <h3><strong>Откуда везем</strong></h3><hr>
+		 		
+		 <div class='calc-form-td'>
+   		<div class='contract-form-label'><label for="address1" id='address1_label'>Адрес отправителя:</label></div>
+        <div class='contract-form-form' id='address_type_select'>
+        <input type="text" id='address1' class="calc-input-long" value='' placeholder='Адрес получения (забора) заказа' onchange="checkContractAddress1();">
+
+        </div>
+		</div> 	
+		
+	    <div class='calc-form-td'>
+   		<div class='contract-form-label'><label for="call_courier_sender" id='call_courier_senderlabel'>Контактное лицо:</label></div>
+        <div class='contract-form-form' id='address_type_select'>
+        <input type="text" id='call_courier_sender' class="calc-input-middle" value='' placeholder='Введите имя отправителя' onchange="checkContractPerson2();">
+			<div class='input_hint' id='input_hint_ds'><a href="javascript:void();" onClick="insertDataSender();">Вставить данные Заказчика</a></div>
+        </div>
+		</div>   
+		   
+		<div class='calc-form-td'>
+   		<div class='contract-form-label'><label for="call_courier_sender_phone" id='call_courier_sender_phone_label'>Телефон отправителя:</label></div>
+        <div class='contract-form-form'>
+        <input type="text" id='call_courier_sender_phone' class="calc-input-middle" value='' placeholder='Введите телефон отправителя' onchange="checkContractPhone2();">
+        </div>
+		</div> 	  
+		
+		<h3><strong>Куда везем</strong></h3><hr>
+		 		
+		 <div class='calc-form-td'>
+   		<div class='contract-form-label'><label for="address3" id='address1_label'>Адрес получателя:</label></div>
+        <div class='contract-form-form' id='address_type_select'>
+        <input type="text" id='address3' class="calc-input-long" value='' placeholder='Адрес доставки заказа' onchange="checkContractAddress3();">
+
+        </div>
+		</div> 	
+		
+	    <div class='calc-form-td'>
+   		<div class='contract-form-label'><label for="call_courier_rec" id='call_courier_rec_label'>Контактное лицо:</label></div>
+        <div class='contract-form-form' id='address_type_select'>
+        <input type="text" id='call_courier_rec' class="calc-input-middle" value='' placeholder='Введите имя получателя' onchange="checkContractPerson3();">
+			<div class='input_hint' id='input_hint_dr' align=""><a href="javascript:void();" onClick="insertDataRec();">Вставить данные Заказчика</a></div>
+        </div>
+		</div>   
+		   
+		<div class='calc-form-td'>
+   		<div class='contract-form-label'><label for="call_courier_rec_phone" id='call_courier_rec_phone_label'>Телефон получателя:</label></div>
+        <div class='contract-form-form'>
+        <input type="text" id='call_courier_rec_phone' class="calc-input-middle" value='' placeholder='Введите телефон отправителя' onchange="checkContractPhone3();">
+        </div>
+		</div> 	
+		
+		
+				<h3><strong>Что везем</strong></h3><hr>
+				
+				
+				<div class='calc-form-td'>
+ <div class='contract-form-checkbox'>
+        <input type="checkbox" id='delivery_docs' checked="checked" />
+        <label for="delivery_docs" id='delivery_docs_label' onClick="docsClick();"><span></span>Документы </label>
+   </div>       
+   <div class='contract-form-checkbox'>
+   <input type="checkbox" id='delivery_package'/>
+        <label for="delivery_package" id='delivery_package_label' onClick="parcClick();"><span></span>Посылка</label>
+	</div>       
+ </div>
+		 		
+		 <div class='calc-form-td'>
+   		<div class='contract-form-label'><label for="order_description" id='order_description_label'>Описание отправки:</label></div>
+        <div class='contract-form-form' id='address_type_select'>
+        <input type="text" id='order_description' class="calc-input-long" value='' placeholder='Например: подарок:календарь+кружка' onchange="checkDescription();">
+
+        </div>
+		</div> 	
+		
+	    <div class='calc-form-td'>
+   		<div class='contract-form-label'><label for="order_weight" id='order_weight_label'>Вес заказа:</label></div>
+        <div class='contract-form-form' id='address_type_select'>
+        <input type="text" id='order_weight' class="calc-input-middle" value='' placeholder='Введите вес заказа в кг' onchange="checkContractPerson3();">
+		</div>
+		</div>   
+	   
+	   
+
+<div class='calc-form-td'>
+    <div class='contract-form-label'><label for="order_weight" id='order_weight_label'>Кто и как оплачивает:</label></div>
+    <div class='contract-form-form' id='address_type_select'>
+            <select id='payer' class='location-select'>
+             <option value='pay_sender_cash' selected>Отправитель, наличными при отправке</option>
+             <option value='pay_reciep_cash'>Получатель, наличными при получении</option>
+           <!--  <option value='russia'>Отправка по России</option>
+             <option value='world'>Отправка в другие страны</option> -->
+        </select>
+	</div>
+    </div>
+
+	
+			
+			
+    
+    
+    
+	   
+		   
+		   <div class='calc-form-td'><br> <br></div>
+		  <div id='priv_data2'>Нажимая кнопку "Вызвать курьера", я принимаю  <A HREF="https://uniexpress.ru/privatedata.html" TARGET="_blank">Правила обработки персональных данных</A>, и даю согласие на обработку моих персональных данных.</div>  
+		<div class='calc-form-result-button'>
+		<div class='call-courier-alert'>Внимание! Не все обязательные поля заполнены (отмечены красным)!</div>
+<div id='call_courier_button' class='usual-button-center' title='Расчет стоимости курьерской доставки' onClick="callCourierCheck();">ВЫЗВАТЬ КУРЬЕРА</div><br /><br /><br />
+</div>
+	
+			<div class='calc-form-td'><br> <br> <br> <br> <br> <br></div>
+		
+		 
+		 
+		</div>
+ 
+</div>
+
+<?php } ?>
