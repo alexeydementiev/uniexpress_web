@@ -2,7 +2,7 @@
 
 <div class='top-fixed'>
    <div class='top-fixed-int'>
-      <a href="/"><div class='top-fixed-logo' title='UniExpress курьерская служба доставки для интернет-магазинов' onClick='document.location="/"'></a></div>
+      <a href="/"><div class='top-fixed-logo' title='Shipperty курьерская служба доставки для интернет-магазинов' onClick='document.location="/"'></a></div>
       <div class='top-fixed-location'>
           <!-- <select id='location' class='location-select'>
              <option value='mos' selected>г.Москва</option>
@@ -13,8 +13,8 @@
       <div class='top-fixed-language'><!-- <div id='language-changer'>En</div> --></div>
       <div class='top-fixed-separator'></div>
       <div class='top-fixed-services'><a href='services.html' rel='nofollow'><div id='services-tarif' title='Услуги курьерской доставки и тарифа на услуги курьерской доставки'>Услуги и тарифы</div></a></div>
-      <div class='top-fixed-services'><a href='https://p.uniexpress.ru' target="_blank" rel='nofollow'><div id='private-cabinet' title='Вход для клиентов службы доставки UniExpress'>Личный кабинет</div></a></div>
-      <div class='top-fixed-callback'><div id='call-back-button' title='Обратный звонок от службы курьерской доставки UniExpress' onClick="callBackClick();">ЗАКАЗАТЬ ЗВОНОК</div></div>
+      <div class='top-fixed-services'><a href='https://p.uniexpress.ru' target="_blank" rel='nofollow'><div id='private-cabinet' title='Вход для клиентов службы доставки Shipperty'>Личный кабинет</div></a></div>
+      <div class='top-fixed-callback'><div id='call-back-button' title='Обратный звонок от службы курьерской доставки Shipperty' onClick="callBackClick();">ЗАКАЗАТЬ ЗВОНОК</div></div>
       
             <div class='top-fixed-menu-mobile' onClick='hMenuClickMobile();'></div>
         <div class='top-fixed-menu-mobile-content' id='top_menu_mobile'>
@@ -24,7 +24,7 @@
        <a href='partners.html'><div id='partners-point' class='point-ham-menu' title='Услуги курьерской доставки и тарифа на услуги курьерской доставки'>Партнеры</div></a>
        <a href='contacts.html'><div id='loc-point' class='point-ham-menu' title='Услуги курьерской доставки и тарифа на услуги курьерской доставки'>Контакты</div></a>
        </div>
-      <a href='https://p.uniexpress.ru' target="_blank" rel='nofollow' title="Вход в личный кабинет UniExpress"><div class='top-fixed-pcicon-mobile'></div></a>
+      <a href='https://p.uniexpress.ru' target="_blank" rel='nofollow' title="Вход в личный кабинет Shipperty"><div class='top-fixed-pcicon-mobile'></div></a>
        
       
       <div class='top-fixed-phones-tablet'>

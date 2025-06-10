@@ -242,7 +242,7 @@ $('#customer_slider_int').animate({
 
 function callBackDo()
 {
-   if ($('#call_back_button').html() == 'Вернуться на сайт UniExpress')
+   if ($('#call_back_button').html() == 'Вернуться на сайт Shipperty')
    {
 	  $('#call-back-window').css('display', 'none');  $('#modales-back').css('display', 'none');
    }
@@ -269,7 +269,7 @@ function callBackDo()
 		     $('#call_back_button').css('display', 'none')
 			  $('#priv_data').css('display', 'none')
 			 $('#call_back_header').html('Звонок заказан');
-			 $('#call_back_comment').html('Уважаемый, '+$('#call_back_name_input').val()+'<br> Благодарим Вас за обращение в службу доставки UniExpress. Ждите звонка от нашего сотрудника в течение ближайшего времени.');
+			 $('#call_back_comment').html('Уважаемый, '+$('#call_back_name_input').val()+'<br> Благодарим Вас за обращение в службу доставки Shipperty. Ждите звонка от нашего сотрудника в течение ближайшего времени.');
 
 
 		  }

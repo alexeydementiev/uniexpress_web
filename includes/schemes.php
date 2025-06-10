@@ -14,7 +14,7 @@
 </div>
 
 <div id='scheme_step2_1' class='scheme-block'>
-<h2>Подготовка заказа на складе UniExpress</h2>
+<h2>Подготовка заказа на складе Shipperty</h2>
 <div class="scheme-pic"  id='scheme_pic2_1'></div>
 <div class='scheme-add'>Наш склад комплектует заказ, производит упаковку и маркировку заказа, после чего он готов к отправке</div>
 </div>
@@ -92,7 +92,7 @@
 <div id='scheme_step_contract' class='scheme-contract'>
 <a href='contract.html' class='mainlink'>
 <div class='inner-button-div'>
-<div class='usual-button-center' title='Заключить договор на курьерскую доставку от UniExpress'>НАЧАТЬ СОТРУДНИЧЕСТВО</div>
+<div class='usual-button-center' title='Заключить договор на курьерскую доставку от Shipperty'>НАЧАТЬ СОТРУДНИЧЕСТВО</div>
 	</div></a></div>
 
 
