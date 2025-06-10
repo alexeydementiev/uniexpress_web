@@ -2,7 +2,7 @@
 <script src="https://widget.cloudpayments.ru/bundles/cloudpayments"></script>
 
  <div id='payment_content'>
-                   <h2>Оплатить услуги службы доставки UniExpress 2</h2>
+                   <h2>Оплатить услуги службы доставки Shipperty 2</h2>
 <div class='calc-form-line'>
 <div class='calc-form-td'>
    <div class='contract-form-label'><label for="payment_summ" id='payment_summ_label'>Сумма, руб.:</label></div>

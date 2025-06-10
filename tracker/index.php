@@ -7,7 +7,7 @@
 <head>
 <?php require("../includes/head.php"); ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Личный кабинет партнера службы доставки UniExpress</title>
+<title>Личный кабинет партнера службы доставки Shipperty</title>
 </head>
 
 <body>
