@@ -29,7 +29,7 @@ $sms = sendSMS($chatIdD, $smsText);
 $sms2 = sendSMS($chatIdR, $smsText);
 
 $headers  = "Content-type: text/plain; charset=UTF-8 \n";
-$headers .= "From: notification@uniexpress.ru \n";
+$headers .= "From: notification@shipperty.ru \n";
 
 echo json_encode($smsText);
 exit();

@@ -21,8 +21,8 @@ function sendSMS($chatId, $text)
 }
 
 $headers  = "Content-type: text/plain; charset=UTF-8 \n"; 
-$headers .= "From: notification@uniexpress.ru \n";
-$headers .= "Bcc: sales@uniexpress.ru\r\n";
+$headers .= "From: notification@shipperty.ru \n";
+$headers .= "Bcc: sales@shipperty.ru\r\n";
 
 
 //FULL
@@ -39,7 +39,7 @@ $chatIdR = "708408244"; //Рябов
 $chatIdD = "993384895"; //dementiuev
 
 
-$m =  mail("ryabov@uniexpress.ru", "Запрос на заключение договора (упрощенная форма)", $text_zakaz, $headers);
+$m =  mail("ryabov@shipperty.ru", "Запрос на заключение договора (упрощенная форма)", $text_zakaz, $headers);
 $sms = sendSMS($chatIdR, $text_zakaz);
 
 echo json_encode($m);

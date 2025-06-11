@@ -26,8 +26,8 @@ else if ($payer == "pay_reciep_cash") {$pay="Получатель, наличн�
 else {$pay = $payer;}
 
 $headers  = "Content-type: text/plain; charset=UTF-8 \n";
-$headers .= "From: notification@uniexpress.ru \n";
-$headers .= "Cc: zakaz@uniexpress.ru \r\n";
+$headers .= "From: notification@shipperty.ru \n";
+$headers .= "Cc: zakaz@shipperty.ru \r\n";
 
 //FULL
 $text_zakaz=
@@ -59,7 +59,7 @@ Email: $call_courier_email\n
 
 $id = '1219';
 $auth = '824682b7c01d5c745bb87d6b1b4308c1';
-$url = 'http://api2.uniexpress.su/new_order_msk.php';
+$url = 'http://api2.shipperty.ru/new_order_msk.php';
 
 
 $ch = curl_init();
@@ -111,7 +111,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($q));
 $result = curl_exec($ch);
 curl_close($ch);
 
-$m =  mail("express@uniexpress.ru", "ЗАКАЗ НА ДОСТАВКУ ТЕХНИКИ APPLE В РЕМОНТ", $text_zakaz, $headers);
+$m =  mail("express@shipperty.ru", "ЗАКАЗ НА ДОСТАВКУ ТЕХНИКИ APPLE В РЕМОНТ", $text_zakaz, $headers);
 
 echo json_encode($result);
 

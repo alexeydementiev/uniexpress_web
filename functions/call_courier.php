@@ -25,8 +25,8 @@ else if ($payer == "pay_reciep_cash") {$pay="Получатель, наличн�
 else {$pay = $payer;}
 
 $headers  = "Content-type: text/plain; charset=UTF-8 \n"; 
-$headers .= "From: notification@uniexpress.ru \n";
-$headers .= "Cc: sales@uniexpress.ru\r\n";
+$headers .= "From: notification@shipperty.ru \n";
+$headers .= "Cc: sales@shipperty.ru\r\n";
 
 //FULL
 $text_zakaz=
@@ -57,7 +57,7 @@ Email: $call_courier_email\n
 ***********************************************\n";
 
 
-$m =  mail("express@uniexpress.ru", "ЗАКАЗ НА ЭКСПРЕСС-ДОСТАВКУ", $text_zakaz, $headers);
+$m =  mail("express@shipperty.ru", "ЗАКАЗ НА ЭКСПРЕСС-ДОСТАВКУ", $text_zakaz, $headers);
 
 
 

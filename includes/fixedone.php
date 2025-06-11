@@ -115,7 +115,7 @@
 	   
 		   
 		   <div class='calc-form-td'><br> <br></div>
-		  <div id='priv_data2'>Нажимая кнопку "Вызвать курьера", я принимаю  <A HREF="https://uniexpress.ru/privatedata.html" TARGET="_blank">Правила обработки персональных данных</A>, и даю согласие на обработку моих персональных данных.</div>  
+		  <div id='priv_data2'>Нажимая кнопку "Вызвать курьера", я принимаю  <A HREF="https://shipperty.ru/privatedata.html" TARGET="_blank">Правила обработки персональных данных</A>, и даю согласие на обработку моих персональных данных.</div>
 		<div class='calc-form-result-button'>
 		<div class='call-courier-alert'>Внимание! Не все обязательные поля заполнены (отмечены красным)!</div>
 <div id='call_courier_button' class='usual-button-center' title='Расчет стоимости курьерской доставки' onClick="callCourierCheck();">ВЫЗВАТЬ КУРЬЕРА</div><br /><br /><br />

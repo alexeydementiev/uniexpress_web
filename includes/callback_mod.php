@@ -14,6 +14,6 @@ data-callback="callBackDo">
 </button>
  </form>
 </div>
-<div id='priv_data'>Нажимая кнопку "Заказать звонок", я принимаю  <A HREF="https://uniexpress.ru/privatedata.html" TARGET="_blank">Правила обработки персональных данных</A>, и даю согласие на обработку моих персональных данных.</div> 
+<div id='priv_data'>Нажимая кнопку "Заказать звонок", я принимаю  <A HREF="https://shipperty.ru/privatedata.html" TARGET="_blank">Правила обработки персональных данных</A>, и даю согласие на обработку моих персональных данных.</div>
 </div>
 <div id='modales-back'></div>

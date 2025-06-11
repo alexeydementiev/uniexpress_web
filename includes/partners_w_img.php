@@ -25,7 +25,7 @@ $rows2 = pg_num_rows($r2);
  for($i3=0; $i3<$rows2; $i3++)
  {
   $f2=pg_fetch_array($r2);
-  $src_logo = "https://p.uniexpress.ru/images/logos/".$f2['_code']."/".$f2['_fld5228'];
+  $src_logo = "https://p.shipperty.ru/images/logos/".$f2['_code']."/".$f2['_fld5228'];
   if (file_exists($src_logo)) {
       $img_logo_param = getimagesize($src_logo) ?? array();
       $nim = $f2['_fld5229'] ?? "";

@@ -1,6 +1,6 @@
 <script src="js/contract.js"></script>
 <div id='contract_content'>
-<div id='priv_data2'>Заполняя данные этой формы, я принимаю  <A HREF="https://uniexpress.ru/privatedata.html" TARGET="_blank">Правила обработки персональных данных</A>, и даю согласие на обработку моих персональных данных.</div> 
+<div id='priv_data2'>Заполняя данные этой формы, я принимаю  <A HREF="https://shipperty.ru/privatedata.html" TARGET="_blank">Правила обработки персональных данных</A>, и даю согласие на обработку моих персональных данных.</div>
 <div id='contract_step1'>
 <h2>Общие данные о заказчике</h2>
 <div class='calc-form-line'>

@@ -14,14 +14,12 @@ RewriteEngine on
 RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
 RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
-
-# Редирект только для uniexpress.ru и www.uniexpress.ru
 RewriteCond %{HTTPS} !=on
 RewriteCond %{HTTP_HOST} ^(www\.)?uniexpress\.ru$ [NC]
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
-RewriteRule ^index\.html$ https://uniexpress.ru/ [R=301,L]
+RewriteRule ^index\.html$ https://shipperty.ru/ [R=301,L]
 
 </IfModule>
 

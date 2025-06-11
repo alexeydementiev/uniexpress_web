@@ -8,5 +8,5 @@ Disallow: /calc.html
 Disallow: /?C=
 Disallow: /?chapter=
 
-Sitemap: https://uniexpress.ru/sitemap.xml
-Host: https://uniexpress.ru
+Sitemap: https://shipperty.ru/sitemap.xml
+Host: https://shipperty.ru
