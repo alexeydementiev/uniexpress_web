@@ -16,6 +16,8 @@
 
 <div id="main_div">
 
+<h2>Список заказов – <?php echo date('Y-m-d H:i:s'); ?></h2>
+
 
 
 <div id="main_block_03">
