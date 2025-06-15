@@ -10,7 +10,7 @@
           </select> 
            -->
       </div>
-      <div class='top-fixed-language'><!-- <div id='language-changer'>En</div> --></div>
+      <div class='top-fixed-language'><div id='language-changer'>EN</div></div>
       <div class='top-fixed-separator'></div>
       <div class='top-fixed-services'><a href='services.html' rel='nofollow'><div id='services-tarif' title='Услуги курьерской доставки и тарифа на услуги курьерской доставки'>Услуги и тарифы</div></a></div>
       <div class='top-fixed-services'><a href='https://p.shipperty.ru' target="_blank" rel='nofollow'><div id='private-cabinet' title='Вход для клиентов службы доставки Shipperty'>Личный кабинет</div></a></div>
