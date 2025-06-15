@@ -4,8 +4,13 @@ $data = json_decode(file_get_contents('php://input'), true);
 $text = $data['text'] ?? '';
 $target = $data['target'] ?? 'en';
 
-$apiKey = 'YOUR_DEEPSEEK_API_KEY';
+$apiKey = getenv('DEEPSEEK_API_KEY') ?: 'YOUR_DEEPSEEK_API_KEY';
 $url = 'https://api.deepseek.com/v1/translate';
+
+if($apiKey === 'YOUR_DEEPSEEK_API_KEY'){
+    echo json_encode(['text' => $text]);
+    exit();
+}
 
 $payload = json_encode([
     'text' => $text,
@@ -30,8 +35,14 @@ if($error){
     exit();
 }
 
+
 $result = json_decode($response, true);
-$translated = $result['translation'] ?? $text;
+$translated = $text;
+if(isset($result['translation'])){
+    $translated = $result['translation'];
+}elseif(isset($result['data']['translations'][0]['translatedText'])){
+    $translated = $result['data']['translations'][0]['translatedText'];
+}
 
 echo json_encode(['text' => $translated]);
 

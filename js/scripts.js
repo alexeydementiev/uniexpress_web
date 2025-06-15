@@ -125,16 +125,15 @@ function ReviewNext()
 	thisR = $('#reviews_block').attr('thisRev');
 	lastR = $('#reviews_block').attr('allRevs');
 	if (thisR == lastR) {nextR=1;} else  {nextR=parseFloat(thisR)+1;}
-	
 	$.ajax({
 		type: "POST",
 		url: "functions/showReview.php",
 		data: "nextR="+nextR,
         dataType: "json",
-		error: function() { alert('Error in module'); },
+		error: function() { alert('Error in module showing nxt reviews'); },
 		success: function(data)
-    	  {  
-		   		     $('#reviews_review').fadeOut('fast', function() { $('#reviews_review').html(data[1]); $('#reviews_review').fadeIn('fast');   } );
+    	  {
+			  $('#reviews_review').fadeOut('fast', function() { $('#reviews_review').html(data[1]); $('#reviews_review').fadeIn('fast');   } );
 			// $('#review_slider_photo').css('background', 'none');
 			$('#review_slider_photo').fadeOut('fast', function() { $('#review_slider_photo').css('background-image', data[2]); $('#review_slider_photo').fadeIn('fast');   } );
 			$('#review_slider_name').fadeOut('fast', function() { $('#review_slider_name').html(data[3]); $('#review_slider_name').fadeIn('fast');   } );
