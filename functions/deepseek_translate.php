@@ -1,5 +1,6 @@
 <?php
 header('Content-Type: application/json; charset=utf-8');
+header('Access-Control-Allow-Origin: *');
 $data = json_decode(file_get_contents('php://input'), true);
 $text = $data['text'] ?? '';
 $target = $data['target'] ?? 'en';

@@ -1,5 +1,6 @@
 var currentLang = 'ru';
-var skipTags = ['SCRIPT','STYLE','NOSCRIPT','IFRAME'];
+var skipTags = ['SCRIPT', 'STYLE', 'NOSCRIPT', 'IFRAME'];
+var textNodes = [];
 
 function translateText(text, lang){
     return fetch('functions/deepseek_translate.php', {
@@ -12,26 +13,33 @@ function translateText(text, lang){
     .catch(function(){ return text; });
 }
 
+function collectTextNodes(){
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+    textNodes = [];
+    var node;
+    while((node = walker.nextNode())){
+        if(skipTags.indexOf(node.parentNode.tagName) !== -1){
+            continue;
+        }
+        if(node.textContent.trim()){ textNodes.push(node); }
+    }
+}
+
 function translateDOM(lang){
-    document.querySelectorAll('body *').forEach(function(el){
-        if(skipTags.indexOf(el.tagName) !== -1){ return; }
-        if(el.children.length === 0){
-            var txt = el.textContent.trim();
-            if(!txt){ return; }
-            if(!el.dataset.originalText){
-                el.dataset.originalText = el.textContent;
-            }
-            if(lang === 'ru'){
-                el.textContent = el.dataset.originalText;
+    textNodes.forEach(function(node){
+        if(typeof node._originalText === 'undefined'){
+            node._originalText = node.textContent;
+        }
+        if(lang === 'ru'){
+            node.textContent = node._originalText;
+        }else{
+            if(node._translatedText){
+                node.textContent = node._translatedText;
             }else{
-                if(el.dataset.translatedText){
-                    el.textContent = el.dataset.translatedText;
-                }else{
-                    translateText(el.dataset.originalText, lang).then(function(t){
-                        el.textContent = t;
-                        el.dataset.translatedText = t;
-                    });
-                }
+                translateText(node._originalText, lang).then(function(t){
+                    node.textContent = t;
+                    node._translatedText = t;
+                });
             }
         }
     });
@@ -56,6 +64,7 @@ function updateLanguageIcon(){
 }
 
 document.addEventListener('DOMContentLoaded', function(){
+    collectTextNodes();
     var lang = localStorage.getItem('language') || 'ru';
     currentLang = lang;
     if(lang !== 'ru'){ translateDOM(lang); }
