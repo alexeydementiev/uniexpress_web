@@ -8,7 +8,7 @@ function updateLangButton(){
 
 function switchTo(lang){
     localStorage.setItem('language', lang);
-    var path = window.location.pathname;
+    var path = window.location.pathname.replace(/\/$/, '/index.html');
     if(lang === 'en'){
         if(!/-en\.html$/.test(path)){
             path = path.replace(/\.html$/, '-en.html');
@@ -24,9 +24,10 @@ function toggleLanguage(){
 }
 
 document.addEventListener('DOMContentLoaded', function(){
-    if(currentLang === 'en' && !/-en\.html$/.test(window.location.pathname)){
-        var newPath = window.location.pathname.replace(/\.html$/, '-en.html');
-        if(newPath !== window.location.pathname){
+    var pathname = window.location.pathname.replace(/\/$/, '/index.html');
+    if(currentLang === 'en' && !/-en\.html$/.test(pathname)){
+        var newPath = pathname.replace(/\.html$/, '-en.html');
+        if(newPath !== pathname){
             window.location.replace(newPath);
             return;
         }
