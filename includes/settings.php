@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 putenv('LANG=UTF-8');
 date_default_timezone_set('Europe/Moscow');
 setlocale(LC_CTYPE, 'ru_RU.UTF-8');
