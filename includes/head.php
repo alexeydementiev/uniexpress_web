@@ -41,6 +41,6 @@
 <script src="js/respond.min.js"></script>
 <script src="js/scripts.js"></script>
 <script src="js/jquery.maskedinput.js" type="text/javascript"></script>
-<script src="js/translator.js"></script> 
+<script src="js/language-switcher.js"></script>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 
