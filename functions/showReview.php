@@ -4,11 +4,9 @@
 $host = "localhost";
 $user = "postgres";
 $pass = "3095";
-$db = "uniexpress_msk";
-$db_S = "uniexpress_spb";
+$db = "uniexpress-service";
 
-$connection = pg_connect ("host=$host dbname=$db user=$user password=$pass");
-$connection_S = pg_connect ("host=$host dbname=$db_S user=$user password=$pass");
+$connection = pg_connect("host=$host dbname=$db user=$user password=$pass");
 
   $nextR = $_POST['nextR'];
   
